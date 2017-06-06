@@ -1,0 +1,22 @@
+{
+    "name": "micro-php",
+    "description": "Your project description",
+    "keywords": ["PHP"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rajnish Kumar",
+            "email": "rajnishmsrit@gmail.com",
+            "role": "Creator / Main Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "filp/whoops": "~2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "microphp\\": "src/"
+        }
+    }
+}
