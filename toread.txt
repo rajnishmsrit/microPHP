@@ -56,10 +56,9 @@
 
 Some script
 
-<!--{% for item in menuItems %}
+{% for item in menuItems %}
     <a href="{{ item['href'] }}">{{ item['text'] }}</a><br>
 {% endfor %}
 <hr>
 {% block content %}
 {% endblock %}
--->
