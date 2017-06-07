@@ -14,6 +14,7 @@ $injector->define('Http\HttpRequest', [
 
 $injector->alias('Http\Response', 'Http\HttpResponse');
 $injector->share('Http\HttpResponse');
+/*
 $injector->alias('microphp\Template\Renderer', 'microphp\Template\MustacheRenderer');
 $injector->define('Mustache_Engine', [
     ':options' => [
@@ -22,10 +23,26 @@ $injector->define('Mustache_Engine', [
         ]),
     ],
 ]);
+*/
+
+$injector->alias('microphp\Template\Renderer', 'microphp\Template\TwigRenderer');
+$injector->delegate('Twig_Environment', function () use ($injector) {
+    $loader = new Twig_Loader_Filesystem(dirname(__DIR__) . '/templates');
+    $twig = new Twig_Environment($loader);
+    return $twig;
+});
+
+$injector->alias('microphp\Template\FrontendRenderer', 'microphp\Template\FrontendTwigRenderer');
+
+//ch 10
+$injector->alias('microphp\Menu\MenuReader', 'microphp\Menu\ArrayMenuReader');
+$injector->share('microphp\Menu\ArrayMenuReader');
+
 $injector->define('microphp\Page\FilePageReader', [
     ':pageFolder' => __DIR__ . '/../pages',
 ]);
 
 $injector->alias('microphp\Page\PageReader', 'microphp\Page\FilePageReader');
 $injector->share('microphp\Page\FilePageReader');
+
 return $injector;

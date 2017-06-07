@@ -3,7 +3,8 @@
 namespace microphp\Controllers;
 
 use Http\Response;
-use microphp\Template\Renderer;
+//use microphp\Template\Renderer;
+use microphp\Template\FrontendRenderer;
 use microphp\Page\PageReader;
 use microphp\Page\InvalidPageException;
 
@@ -15,7 +16,8 @@ class Page
 
     public function __construct(
         Response $response,
-        Renderer $renderer,
+        //Renderer $renderer,
+        FrontendRenderer $renderer,
         PageReader $pageReader
     ) {
         $this->response = $response;
