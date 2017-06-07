@@ -57,9 +57,12 @@ switch ($routeInfo[0]) {
         $className = $routeInfo[1][0];
         $method = $routeInfo[1][1];
         $vars = $routeInfo[2];
-
-        $class = new $className;
+        //print_R($routeInfo);exit;
+        $class = new $className($response);
         $class->$method($vars);
+
+       // $class = new $className;
+       // $class->$method($vars);
         break;
     /*
         $handler = $routeInfo[1];

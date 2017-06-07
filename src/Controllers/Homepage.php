@@ -1,5 +1,6 @@
 <?php declare(strict_types = 1);
 
+/*
 namespace microphp\Controllers;
 
 class Homepage
@@ -9,7 +10,7 @@ class Homepage
         echo 'Hello World from HomePage';
     }
 }
-/*
+*/
 
 namespace microphp\Controllers;
 
@@ -26,7 +27,6 @@ class Homepage
 
     public function show()
     {
-        $this->response->setContent('Hello World');
+        $this->response->setContent('Hello World from show method');
     }
 }
-*/
