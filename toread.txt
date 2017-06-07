@@ -1,4 +1,42 @@
+- front controller
+  http://en.wikipedia.org/wiki/Front_Controller_pattern
+  http://php.net/manual/en/language.constants.predefined.php
+  http://php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration.strict
 
+- composer
+  https://getcomposer.org/doc/faqs/should-i-commit-the-dependencies-in-my-vendor-directory.md
+  Travis CI
+
+- error handler
+  http://www.php-fig.org/psr/psr-4
+
+- http
+  http://php.net/manual/en/language.variables.superglobals.php
+  http://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29
+
+  Some alternatives:
+  [Symfony HttpFoundation](https://github.com/symfony/HttpFoundation),
+  [Nette HTTP Component](https://github.com/nette/http),
+  [Aura Web](https://github.com/auraphp/Aura.Web),
+  [sabre/http](https://github.com/fruux/sabre-http)
+
+- router
+  [symfony/Routing](https://github.com/symfony/Routing),
+  [Aura.Router](https://github.com/auraphp/Aura.Router),
+  [fuelphp/routing](https://github.com/fuelphp/routing),
+  [Klein](https://github.com/chriso/klein.php)
+
+- dispatching to a class
+  http://martinfowler.com/eaaCatalog/modelViewController.html
+  http://blog.ircmaxell.com/2014/11/a-beginners-guide-to-mvc-for-web.html
+
+- inversion of control
+  http://en.wikipedia.org/wiki/Inversion_of_control
+  http://en.wikipedia.org/wiki/Dependency_injection
+
+- dependency injector
+  [Auryn](https://github.com/rdlowrey/Auryn)
+  [interfaces](http://php.net/manual/en/language.oop5.interfaces.php)
 
 - templating
   https://github.com/bobthecow/mustache.php/blob/master/src/Mustache/Engine.php
@@ -10,3 +48,18 @@
   http://en.wikipedia.org/wiki/Separation_of_concerns
 
 - page menu
+  http://twig.sensiolabs.org/
+
+- frontend
+  http://purecss.io/
+
+
+Some script
+
+<!--{% for item in menuItems %}
+    <a href="{{ item['href'] }}">{{ item['text'] }}</a><br>
+{% endfor %}
+<hr>
+{% block content %}
+{% endblock %}
+-->
