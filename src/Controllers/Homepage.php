@@ -31,7 +31,7 @@ class Homepage
     }
 }
 */
-
+/*
 namespace microphp\Controllers;
 
 use Http\Request;
@@ -53,5 +53,37 @@ class Homepage
         $content = '<h1>Hello World</h1>';
         $content .= 'Hello ' . $this->request->getParameter('name', 'stranger');
         $this->response->setContent($content);
+    }
+}
+*/
+namespace microphp\Controllers;
+
+use Http\Request;
+use Http\Response;
+use microphp\Template\Renderer;
+
+class Homepage
+{
+    private $request;
+    private $response;
+    private $renderer;
+
+    public function __construct(
+        Request $request,
+        Response $response,
+        Renderer $renderer
+    ) {
+        $this->request = $request;
+        $this->response = $response;
+        $this->renderer = $renderer;
+    }
+
+    public function show()
+    {
+        $data = [
+            'name' => $this->request->getParameter('name', 'stranger'),
+        ];
+        $html = $this->renderer->render('Homepage', $data);
+        $this->response->setContent($html);
     }
 }

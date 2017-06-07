@@ -1,0 +1,7 @@
+
+
+- templating
+  https://github.com/bobthecow/mustache.php/blob/master/src/Mustache/Engine.php
+  http://en.wikipedia.org/wiki/Adapter_pattern
+  http://en.wikipedia.org/wiki/Interface_segregation_principle
+
