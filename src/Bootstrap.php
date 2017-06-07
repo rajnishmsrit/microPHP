@@ -33,8 +33,16 @@ $routeDefinitionCallback = function (\FastRoute\RouteCollector $r) {
     }
 };
 
+
+$http_pieces=explode("/",$request->getPath());
+
+
+$real_path="/".end($http_pieces);
+
 $dispatcher = \FastRoute\simpleDispatcher($routeDefinitionCallback);
-$routeInfo = $dispatcher->dispatch($request->getMethod(), $request->getPath());
+//$routeInfo = $dispatcher->dispatch($request->getMethod(), $request->getPath());
+$routeInfo = $dispatcher->dispatch($request->getMethod(), $real_path);
+
 
 switch ($routeInfo[0]) {
     case \FastRoute\Dispatcher::NOT_FOUND:
@@ -46,12 +54,9 @@ switch ($routeInfo[0]) {
         $response->setStatusCode(405);
         break;
     case \FastRoute\Dispatcher::FOUND:
-        $className = $routeInfo[1][0];
-        $method = $routeInfo[1][1];
+        $handler = $routeInfo[1];
         $vars = $routeInfo[2];
-
-        $class = new $className;
-        $class->$method($vars);
+        call_user_func($handler, $vars);
         break;
 }
 
