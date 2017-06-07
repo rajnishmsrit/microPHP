@@ -5,3 +5,7 @@
   http://en.wikipedia.org/wiki/Adapter_pattern
   http://en.wikipedia.org/wiki/Interface_segregation_principle
 
+- dynamic pages
+  http://en.wikipedia.org/wiki/Markdown
+  http://en.wikipedia.org/wiki/Separation_of_concerns
+

@@ -12,5 +12,6 @@ return [
 */
 return [
     ['GET', '/', ['microphp\Controllers\Homepage', 'show']],
+    ['GET', '/{slug}', ['microphp\Controllers\Page', 'show']],
 ];
 

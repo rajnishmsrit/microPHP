@@ -22,5 +22,10 @@ $injector->define('Mustache_Engine', [
         ]),
     ],
 ]);
+$injector->define('microphp\Page\FilePageReader', [
+    ':pageFolder' => __DIR__ . '/../pages',
+]);
 
+$injector->alias('microphp\Page\PageReader', 'microphp\Page\FilePageReader');
+$injector->share('microphp\Page\FilePageReader');
 return $injector;
